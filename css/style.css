@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body header figure img {
+    width: 200px; 
+  }
+html {
+    scroll-behavior:smooth;
+  }
+  
+  header p{
+    font-size: 30px;
+    font-style:italic;
+    font-weight: 500;
+    color:#63550a
+}
+header {
+    position:fixed;
+    text-align: center;
+    background-color: aliceblue;
+    width: 100%;
+    z-index: 20;
+    top: 0;
+    left:0;
+}
+/*seccion de la barra del menu*/
+.nav-home {
+    left:0;
+    width: 100%;
+    background-color: #629280; /* Celeste claro */
+    padding: 10px;
+    border: 4px solid #ebe7e3;
+}
+.nav-home ul{
+    text-align: center; 
+    margin: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;  /*me da espacio entre las palabras*/
+}
+.nav-home li {
+    flex: 1;
+    list-style: none;
+    text-align: center;
+}
+.nav-home a {
+    text-decoration: none;
+    color: #f8f7f6;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: 20px;
+    transition: color 0.6s ease;
+    text-align: justify;
+    padding: 10px;
+}
+.nav-home a:hover {
+    background-color: #025025 ;
+    color: #ebe7e3;
+}
+.nav-home a.active {
+    background-color: #025025;
+}
+
+main {
+    margin-top: 204px; /*para espacio header y nav que estan fijos*/
+}
+
+/* las 3 imagenes de la seccion 2 index*/
+figure.imgindex{
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;  
+  gap: 0px;
+  padding: 0;
+}
+figure.imgindex img{
+  flex: 1; /*1puede crecer igual, 1 puede reducir igual y 0 parte de 0el tmano*/               
+  max-width: 100%;         
+  height: 600px;           
+  object-fit: cover; /*para que la img llene el espacio sin deformarse*/  
+  min-width: 0; 
+  border: 4px solid #ebe7e3; 
+  border-radius: 6px;/* borde gris claro de 2 píxeles */
+}
+
+/*los productos d elo mas pedido*/
+section h1{
+    text-align: center; 
+    font-family:'Times New Roman', Times, serif, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.maspedido  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none; /*para quitar las vinetas*/
+    max-width: 100%;  
+    gap: 30px;
+    text-align: center;   
+}
+.maspedido p{
+    font-family:'Times New Roman', Times, serif, sans-serif;   
+    font-size: 20px;
+}
+.maspedido li img {
+    width: 250px;
+    height: 250px;
+    max-width: 100%; /*ayuda a que la imagenes se reduzcan o agranden segun la pagina */
+    object-fit: cover;     /* para que la imagen no se distorsione */  
+}
+
+.separacion {
+    margin-bottom: 50px; 
+  }
+
+
+section#contact{
+    
+    width: 100%;
+    height: 40vh;
+    background-color: #6b917b;
+    border: 3px solid #cac7c4;
+    box-sizing: border-box;
+}
+
+.contactcontai{
+    padding: 10px;
+  
+}
+
+
+a button{
+    padding: 10px 20px;
+    background-color: #920a0a;
+    color: aliceblue;
+    
+}
+a {
+    text-align: center; 
+    display: block;
+    
+}
+#contact p{
+    margin-bottom: 20px;
+}
+#contact h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.social-icons {
+    display: flex;
+    text-align: center;
+    
+  }
+  
+  .social-icons a {
+    color: white; /* cambia el color a tu gusto */
+    font-size: 30px;
+    margin: 40px 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #0d1347; /* color al pasar el mouse */
+  }
+
+
+  
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f7f6;
+    color: #555;
+}
+
+
+#aboutus {
+    position: relative; 
+    width: 100%;
+    height: 60vh;
+    overflow: hidden; /*por precausion para pantallas mas pequenas evita desborde*/
+    font-family: Arial, sans-serif;
+    
+}
+
+.aboutimg {
+    position: absolute;
+    inset: 0; /* top:0; left:0; right:0; bottom:0; en una sola línea ocupa todo el area del padre div */ 
+    z-index: 1;
+    padding: 5px;
+}
+
+.aboutimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba(121, 116, 116, 0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;  
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.overlay h1{
+    font-size: 50px;
+    
+}
+
+#aboutus {
+    scroll-margin-top: 300px; /* Ajusta este valor según la altura de tu menú */
+  }
+
+  .whatsfloat {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 30;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .whatsfloat:hover {
+    transform: scale(1.1);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
