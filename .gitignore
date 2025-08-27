@@ -1,6 +1,13 @@
-# Include your project-specific ignores in this file
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-# Useful .gitignore templates: https://github.com/github/gitignore
-node_modules
-dist
-.cache
+
+Thumbs.db
+
+# Configuración del editor
+.vscode/
+.idea/
+
+# Archivos de log (si se generan)
+*.log
+
+# Archivos temporales o caché
+.cache/
+temp/
