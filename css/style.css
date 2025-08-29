@@ -1,57 +1,51 @@
-/* Reset básico */
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-body header figure img {
-    width: 200px; 
-  }
 html {
     scroll-behavior:smooth;
-  }
-  
-  header p{
-    font-size: 30px;
-    font-style:italic;
-    font-weight: 500;
-    color:#63550a
-}
+  }  
 header {
     position:fixed;
     text-align: center;
-    background-color: aliceblue;
     width: 100%;
     z-index: 20;
     top: 0;
     left:0;
 }
-/*seccion de la barra del menu*/
+.header-logo{
+    font-size: 1rem;
+    font-style:italic;
+    color:#63550a;
+    background-color: aliceblue;
+}
+.header-logo img{
+    width: 150px;
+    height: 150px;
+  }
+
+
+/*seccion de la barra del menu  home,aboutus*/
 .nav-home {
-    left:0;
     width: 100%;
-    background-color: #629280; /* Celeste claro */
-    padding: 0px;
+    background-color: #629280;
     border: 4px solid #ebe7e3;
-   
-   
 }
 .nav-home ul{
     text-align: center; 
-    margin: 0px;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
-    gap: 0;  /*me da espacio entre las palabras*/
+    overflow-x:auto;
 }
 .nav-home li {
-    flex: 1;
+    flex: 1 0 auto;
     list-style: none;
     text-align: center;
-    padding: 20px;
-    
-    
+    padding: 10px 5px;
 }
 .nav-home a {
     text-decoration: none;
@@ -65,17 +59,17 @@ header {
     height: 100%;
     display: block;
     padding: 20px;
-    
 }
 .nav-home li:hover {
     
     color: #ebe7e3;
     background-color: #025025 ;
-  
 }
 .nav-home li.active {
     background-color: #025025;
 }
+/**/
+
 
 main {
     margin-top: 204px; /*para espacio header y nav que estan fijos*/
@@ -100,24 +94,25 @@ figure.imgindex img{
 }
 
 /*los productos d elo mas pedido*/
-section h1{
+section h2{
     text-align: center; 
     font-family:'Times New Roman', Times, serif, sans-serif;
     font-size: 40px;
     font-weight: 400;
     margin-bottom: 20px;
 }
-.maspedido  {
+
+.maspedido p{
+    font-family:'Times New Roman', Times, serif, sans-serif;   
+    font-size: 20px;
+}
+.maspedido {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none; /*para quitar las vinetas*/
     max-width: 100%;  
     gap: 30px;
-    text-align: center;   
-}
-.maspedido p{
-    font-family:'Times New Roman', Times, serif, sans-serif;   
-    font-size: 20px;
+    text-align: center; 
 }
 .maspedido li img {
     width: 250px;
@@ -171,7 +166,7 @@ a {
     
   }
   
-  .social-icons a {
+.social-icons a {
     color: white; /* cambia el color a tu gusto */
     font-size: 30px;
     margin: 40px 20px;
@@ -179,20 +174,9 @@ a {
     transition: color 0.3s;
   }
   
-  .social-icons a:hover {
+.social-icons a:hover {
     color: #0d1347; /* color al pasar el mouse */
   }
-
-
-  
-/* Pie de página */
-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #f8f7f6;
-    color: #555;
-}
 
 
 #aboutus {
@@ -200,17 +184,14 @@ footer {
     width: 100%;
     height: 60vh;
     overflow: hidden; /*por precausion para pantallas mas pequenas evita desborde*/
-    font-family: Arial, sans-serif;
-    
+    font-family: Arial, sans-serif;   
 }
-
 .aboutimg {
     position: absolute;
     inset: 0; /* top:0; left:0; right:0; bottom:0; en una sola línea ocupa todo el area del padre div */ 
     z-index: 1;
     padding: 5px;
 }
-
 .aboutimg img {
     width: 100%;
     height: 100%;
@@ -228,7 +209,7 @@ footer {
     flex-direction: column;  
     padding: 40px 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .overlay h1{
@@ -240,7 +221,7 @@ footer {
     scroll-margin-top: 350px; /* Ajusta este valor según la altura de tu menú */
   }
 
-  .whatsfloat {
+.whatsfloat {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -249,12 +230,12 @@ footer {
     transition: background-color 0.3s ease;
   }
   
-  .whatsfloat:hover {
+.whatsfloat:hover {
     transform: scale(1.1);
   }
 
 
-  #menu  {
+#menu  {
     margin-top: 350px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -264,21 +245,91 @@ footer {
     text-align: center;   
 }
 
+  
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f7f6;
+    color: #555;
+}
 
+@media screen and (max-width: 768px) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /* Logo más pequeño */
+    .header-logo img {
+      width: 100px;
+      height: auto;
+    }
+  
+    /* Texto del header más pequeño y con padding para respirar */
+    .header-logo h1 {
+      font-size: 1rem;
+      padding: 10px 5px;
+    }
+  
+    /* Menú: mantener fila, reducir padding y tamaño de fuente */
+    .nav-home ul {
+      flex-wrap: nowrap; /* evitar que se vaya a columna */
+      overflow-x: auto;  /* si se pasa, dejar scroll horizontal pequeño */
+    }
+  
+    .nav-home li {
+      flex: 0 0 auto; /* evitar que crezcan demasiado */
+    }
+  
+    .nav-home a {
+      padding: 10px 8px;
+      font-size: 1rem;
+    }
+  
+    /* Las imágenes del figure siguen en fila, solo se ajustan para no ser tan altas */
+    figure.imgindex {
+      flex-wrap: nowrap; /* mantén la fila */
+    }
+  
+    figure.imgindex img {
+      height: 230px; /* reduce la altura para que no se vean gigantes */
+      width: auto; /* que respeten el aspecto */
+      max-width: 33%; /* que quepan 3 imágenes en una fila */
+    }
+  
+    /* Lista "más pedido" con 2 columnas en móvil para que no sea tan apretado */
+    .maspedido {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .maspedido li img {
+      width: 50%;
+      height: auto;
+    }
+    section h2{
+      font-size: 1.5rem;
+    }
+    /* Ajustes menores para overlay y texto en about us */
+    .overlay {
+      font-size: 1.2rem;
+      padding: 20px;
+    }
+  
+    .overlay h1 {
+      font-size: 1.5rem;
+    }
+  
+    #aboutus {
+      height: auto;
+    }
+  
+    /* Menú inferior (si lo usas) */
+    #menu {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* Íconos sociales en fila */
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+  }
