@@ -71,12 +71,9 @@ header {
 /**/
 
 
-main {
-    margin-top: 204px; /*para espacio header y nav que estan fijos*/
-}
-
 /* las 3 imagenes de la seccion 2 index*/
 figure.imgindex{
+  margin-top: 288px;
   justify-content: space-between;
   display: flex;
   max-width: 100%;  
@@ -125,35 +122,30 @@ section h2{
     margin-bottom: 50px; 
   }
 
-
-section#contact{
-    
+#contact{
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     background-color: #6b917b;
     border: 3px solid #cac7c4;
     box-sizing: border-box;
 }
 
-.contactcontai{
-    padding: 10px;
-  
-}
-
-
 a button{
     padding: 10px 20px;
     background-color: #920a0a;
-    color: aliceblue;
-    
+    color: aliceblue;  
+    cursor: pointer;
 }
-a {
-    text-align: center; 
+ a{
     display: block;
-    
-}
+    width: fit-content;
+    margin: 0 auto;
+ }
+
+
 #contact p{
     margin-bottom: 20px;
+    padding: 10px;
 }
 #contact h2{
     margin-bottom: 20px;
@@ -182,7 +174,7 @@ a {
 #aboutus {
     position: relative; 
     width: 100%;
-    height: 60vh;
+    min-height: 60vh;
     overflow: hidden; /*por precausion para pantallas mas pequenas evita desborde*/
     font-family: Arial, sans-serif;   
 }
@@ -218,7 +210,10 @@ a {
 }
 
 #aboutus {
-    scroll-margin-top: 350px; /* Ajusta este valor según la altura de tu menú */
+    scroll-margin-top: 282px; /* Ajusta este valor según la altura de tu menú */
+  }
+#contact {
+    scroll-margin-top: 282px; /* Ajusta este valor según la altura de tu menú */
   }
 
 .whatsfloat {
@@ -236,7 +231,7 @@ a {
 
 
 #menu  {
-    margin-top: 350px;
+    margin-top: 300px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none; /*para quitar las vinetas*/
@@ -286,11 +281,12 @@ footer {
   
     /* Las imágenes del figure siguen en fila, solo se ajustan para no ser tan altas */
     figure.imgindex {
+     margin-top: 200px;
       flex-wrap: nowrap; /* mantén la fila */
     }
   
     figure.imgindex img {
-      height: 230px; /* reduce la altura para que no se vean gigantes */
+      height: 200px; /* reduce la altura para que no se vean gigantes */
       width: auto; /* que respeten el aspecto */
       max-width: 33%; /* que quepan 3 imágenes en una fila */
     }
@@ -318,12 +314,24 @@ footer {
     }
   
     #aboutus {
-      height: auto;
+      width: auto;
+      min-height: 35vh;
+    }
+
+    #contact{
+      scroll-margin-top: 150px;
+      
     }
   
     /* Menú inferior (si lo usas) */
     #menu {
+      margin-top: 200px;
       grid-template-columns: repeat(2, 1fr);
+
+    }
+    #menu li figure img{
+        width: 50%;
+        height: 50%;
     }
   
     /* Íconos sociales en fila */
